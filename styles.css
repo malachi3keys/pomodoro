@@ -2,7 +2,7 @@ body{
     text-align: center;
     font-family: Arial, sans-serif;
     padding: 5rem;
-    /* background-color: rgb(179, 117, 238); */
+    font-size: 1.25rem;
 }
 
 .bigheader{
@@ -12,24 +12,33 @@ body{
     margin-bottom: 5rem;
 }
 
-.time-grid{
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    justify-content: center;
-    justify-items: center;
+.type{
+    background-color: rgb(179, 117, 238);
+    color: white;
+    border-radius: 10px;
+    font-size: 1.75rem;
+    border-style: none;
+    padding: 6px 10px;
+    margin: 0 15px 15px;
+}
+
+#time-div{
+    display: inline-block;
     padding: 0 7%;
 }
 
 .clock {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
     background-color: black;
     color: white;
-    height: 100%;
-    width: 100%;
+    padding: 10px;
     border-radius: 4px;
+    font-size: 5rem;
+}
+
+.colon {
+    display: inline-block;
+    color: black;
     font-size: 5rem;
 }
 
@@ -41,4 +50,18 @@ body{
     justify-items: center;
     margin-top: 1rem;
     padding: 0 7%;
+}
+
+.button-container{
+    margin-top: 2rem;
+}
+
+.start-btn{
+    background-color: rgb(179, 117, 238);
+    color: white;
+    border-radius: 10px;
+    font-size: 1.75rem;
+    border-style: none;
+    padding: 6px 10px;
+    margin: 0 15px;
 }

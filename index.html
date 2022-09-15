@@ -11,33 +11,23 @@
             <div>
                 <h1 class="bigheader">Pomordo Timer</h1>
             </div>
-            <div class="time-grid">
-                <div class="clock">
-                    hey
+            <div>
+                <button id="p" class="type">Pomodoro</button>
+                <button id="b" class="type">Break</button>
+                <button id="j" class="type">Long Break</button>
+            </div>
+            <div id="time-div">
+                <div id="minutes" class="clock">
+                    25
                 </div>
-                <div class="clock">
-                    howdy
-                </div>
-                <div class="clock">
-                    1
-                </div>
-                <div class="clock">
-                    2
-                </div>
-                <div class="clock">
-                    3
-                </div>
-                <div class="clock">
-                    4    
+                <div class="colon">:</div>
+                <div id="seconds" class="clock">
+                    00
                 </div>
             </div>
 
-            <!-- Dropdown menus to select time -->
+            <!-- Dropdown menus to select time
             <div class="drop-container">
-                <div>
-                    <label for="hour">Hour(s)</label>
-                    <select name="h-select" id="hour"></select>
-                </div>
                 <div>
                     <label for="minute">Minute(s)</label>
                     <select name="m-select" id="minute"></select>
@@ -46,7 +36,13 @@
                     <label for="second">Second(s)</label>
                     <select name="s-select" id="second"></select>
                 </div>
-            </div>
+            </div> -->
+        </div>
+
+        <div class="button-container">
+            <button class="start-btn" id="start">start</button>
+            <button class="start-btn" id="pause">pause</button>
+            <button class="start-btn" id="reset">reset</button>
         </div>
 
         <script src="index.js"></script>
