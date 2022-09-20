@@ -1,48 +1,64 @@
-body{
-    text-align: center;
+body {
     font-family: Arial, sans-serif;
-    padding: 5rem;
     font-size: 1.25rem;
+    padding: 5rem 8rem;
+    text-align: center;
 }
 
-.bigheader{
+.bigheader {
     color: rgb(179, 117, 238);
-    font-weight: bold;
     font-size: 3.5rem;
+    font-weight: bold;
     margin-bottom: 5rem;
 }
 
-.type{
-    background-color: rgb(179, 117, 238);
-    color: white;
-    border-radius: 10px;
-    font-size: 1.75rem;
+.select-box {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    width: 75%;
+    margin: auto;
+}
+
+.type {
     border-style: none;
-    padding: 6px 10px;
-    margin: 0 15px 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+    font-size: 1.75rem;
+    font-weight: bold;
+    padding: 6px 20px;
 }
 
-#time-div{
-    display: inline-block;
-    padding: 0 7%;
-}
-
-.clock {
-    display: inline-block;
-    background-color: black;
+.highlight {
+    background-color: rgb(179, 117, 238); 
     color: white;
-    padding: 10px;
-    border-radius: 4px;
-    font-size: 5rem;
 }
 
-.colon {
+#tab {
+    border: 3px solid rgb(179, 117, 238);
+    border-radius: 2px;
+    margin-top: 0px;
+    width: 80%;
+}
+
+#time-div {
     display: inline-block;
-    color: black;
-    font-size: 5rem;
 }
 
-.drop-container{
+.clock, .colon {
+    color: black;
+    display: inline-block;
+    font-size: 10rem;
+    font-weight: bold;
+}
+
+.clock { 
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.drop-container {
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -52,16 +68,50 @@ body{
     padding: 0 7%;
 }
 
-.button-container{
-    margin-top: 2rem;
+.button-container {
+    margin-top: 1rem;
 }
 
-.start-btn{
+.start-btn {
     background-color: rgb(179, 117, 238);
-    color: white;
     border-radius: 10px;
-    font-size: 1.75rem;
     border-style: none;
-    padding: 6px 10px;
+    color: white;
+    font-size: 1.75rem;
     margin: 0 15px;
+    padding: 6px 10px;
+}
+
+.how-title {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+#how {
+    margin-top: 10rem;
+}
+
+.instructions {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 75%;
+}
+
+li {
+    font-size: 1.5rem;
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+
+/* Media queries */
+@media screen and (min-width: 1028px) {
+    .select-box {
+        width: 40%;
+    }
+
+    #tab {
+        width: 35%;
+    }
 }

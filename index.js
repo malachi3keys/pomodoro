@@ -12,14 +12,17 @@ var timeinterval = null;
 //Identify divs that will need to be updated
 const minDiv = document.querySelector('#minutes');
 const secDiv = document.querySelector('#seconds');
+const pomBtn = document.querySelector('#p');
+const breakBtn = document.querySelector('#b');
+const longBtn = document.querySelector('#j');
 
 //Set clock for 1st pomodoro as default
 loadClock('pomodoro');
 
 //Event listeners for length of countdown
-document.querySelector('#p').addEventListener('click', () => loadClock('pomodoro'));
-document.querySelector('#b').addEventListener('click', () => loadClock('short'));
-document.querySelector('#j').addEventListener('click', () => loadClock('long'));
+pomBtn.addEventListener('click', () => loadClock('pomodoro'));
+breakBtn.addEventListener('click', () => loadClock('short'));
+longBtn.addEventListener('click', () => loadClock('long'));
 
 //Event listeners to start, pause, or reset the timer
 document.querySelector('#start').addEventListener('click', () => initializeClock(addtime));
@@ -38,20 +41,33 @@ function loadClock(type) {
             minDiv.innerHTML = ('0' + `${pomodoro}`).slice(-2);
             addtime = pomodoro*60*1000;
             page = type;
+            pomBtn.classList.add('highlight');
+            breakBtn.classList.remove('highlight');
+            longBtn.classList.remove('highlight');
             break;
         case 'short':
             minDiv.innerHTML = ('0' + `${shortBreak}`).slice(-2);
             addtime = shortBreak*60*1000; 
-            page = type;            break;
+            page = type;            
+            pomBtn.classList.remove('highlight');
+            breakBtn.classList.add('highlight');
+            longBtn.classList.remove('highlight');
+            break;
         case 'long':
             minDiv.innerHTML = ('0' + `${longBreak}`).slice(-2);
             addtime = longBreak*60*1000;
             page = type;
+            pomBtn.classList.remove('highlight');
+            breakBtn.classList.remove('highlight');
+            longBtn.classList.add('highlight');
             break;
         default:
             minDiv.innerHTML = `${pomodoro}`;
             addtime = pomodoro*60*1000;
             page = 'pomodoro';
+            pomBtn.classList.add('highlight');
+            breakBtn.classList.remove('highlight');
+            longBtn.classList.remove('highlight');
     }
    
     secDiv.innerHTML = '00';
