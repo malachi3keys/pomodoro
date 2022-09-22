@@ -100,6 +100,7 @@ function initializeClock(addtime) {
 
             if (t.total <= 0) {
                 clearClock();
+                document.querySelector('#boop').play();
             }
         }
 
