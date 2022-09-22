@@ -1,10 +1,10 @@
-#Pomodoro Timer
+# Pomodoro Timer
 
 ![pomodoro timer screenshot](images/timer_screenshot.png)
 
 This project is a timer for the Pomodoro method. The page counts down from 25, 15, or 5 minutes and plays a sound when the clock hits zero. Try it out for yourself [here](https://malachi3keys.github.io/pomodoro/).
 
-##Pomodoro Technique
+## Pomodoro Technique
 
 This method helps with focus and productivity. It works as follows: 
 
