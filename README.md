@@ -2,7 +2,7 @@
 
 This project is a timer for the Pomodoro method. The page counts down from 25, 15, or 5 minutes and plays a sound when the clock hits zero. Try it out for yourself [here](https://malachi3keys.github.io/pomodoro/).
 
-<img src="images/timer_screenshot.png" alt="pomodoro timer screenshot" width="400">
+<img src="images/timer_screenshot.png" alt="pomodoro timer screenshot" width="500">
 
 ## Pomodoro Technique
 

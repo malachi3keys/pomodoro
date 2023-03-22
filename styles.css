@@ -1,23 +1,51 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-family: Arial, sans-serif;
     font-size: 1.25rem;
-    padding: 5rem 8rem;
     text-align: center;
 }
 
-.bigheader {
-    color: rgb(179, 117, 238);
+.app {
+    padding: 7%;
+    width: 100%;
+}
+
+#bigheader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 3.5rem;
-    font-weight: bold;
     margin-bottom: 5rem;
 }
 
+.tomato {
+    margin-bottom: 1rem;
+}
+
+h1 {
+    color: rgb(179, 117, 238);
+    font-size: 3.5rem;
+    margin: 0 1rem;
+}
+
 .select-box {
-    align-items: center;
     display: flex;
-    justify-content: space-evenly;
-    width: 75%;
-    margin: auto;
+    flex-direction: column;
+    align-items: center;
+}
+
+.select-timer {
+    display: flex;
+    align-items: end;
+    justify-content: center;
 }
 
 .type {
@@ -28,6 +56,7 @@ body {
     font-size: 1.75rem;
     font-weight: bold;
     padding: 6px 20px;
+    margin: 0 5px
 }
 
 .highlight {
@@ -39,16 +68,19 @@ body {
     border: 3px solid rgb(179, 117, 238);
     border-radius: 2px;
     margin-top: 0px;
-    width: 80%;
+    width: 100%;
+    min-width: 300px;
+    max-width: 550px;
 }
 
 #time-div {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .clock, .colon {
     color: black;
-    display: inline-block;
     font-size: 10rem;
     font-weight: bold;
 }
@@ -56,16 +88,6 @@ body {
 .clock { 
     border-radius: 4px;
     padding: 10px;
-}
-
-.drop-container {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    justify-content: center;
-    justify-items: center;
-    margin-top: 1rem;
-    padding: 0 7%;
 }
 
 .button-container {
@@ -82,36 +104,78 @@ body {
     padding: 6px 10px;
 }
 
-.how-title {
-    font-size: 2rem;
-    margin-bottom: 0.75rem;
+#how {
+    margin-top: 7rem;
 }
 
-#how {
-    margin-top: 10rem;
+.how-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
 }
 
 .instructions {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin: auto;
     width: 75%;
 }
 
-li {
+.details {
     font-size: 1.5rem;
-    list-style: none;
-    margin-bottom: 2rem;
+    line-height: 1.75rem;
+    margin-bottom: 1.25rem;
+    text-align: left;
 }
 
 
 /* Media queries */
-@media screen and (min-width: 1028px) {
-    .select-box {
-        width: 40%;
+@media (max-width: 850px) {
+    .bigbox {
+        margin-bottom: 4rem;
+    } 
+
+    .type {
+        padding: 6px 15px;
     }
 
-    #tab {
-        width: 35%;
+    .how-title {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .details {
+        font-size: 1.35rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .bigbox {  
+        margin-bottom: 3rem;
+    }
+    
+    .type {
+        font-size: 1.5rem;
+        padding: 6px 10px;
+    }
+
+    .clock, .colon {
+        font-size: 9.5rem;
+    }
+
+    .start-btn {
+        font-size: 1.5rem;
+        margin: 0 12px;
+    }
+
+    .how-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .details {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
     }
 }
