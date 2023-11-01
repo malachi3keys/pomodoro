@@ -1,13 +1,27 @@
 //Default countdown times in minutes
-const pomodoro = 25;
-const shortBreak = 5;
-const longBreak = 15;
+const pomodoroDefault = 25;
+const shortBreakDefault = 5;
+const longBreakDefault = 15;
 
-//Time memory
+//Time Settings
 var addtime = 0;
 var holdtime = 0; //keep track of time left when paused
 var page = 'pomodoro';
 var timeinterval = null;
+var pomodoro = pomodoroDefault;
+var shortBreak = shortBreakDefault;
+var longBreak = longBreakDefault;
+
+//Change length of each timer based on input
+//error message if not a number or outside the range
+settings.addEventListener('submit', (event) => {
+    event.preventDefault();
+    pomodoro = settings.elements['pom-time'].value;
+    shortBreak = settings.elements['short-time'].value;
+    longBreak = settings.elements['long-time'].value;
+
+    resetClock();
+})
 
 //Identify divs that will need to be updated
 const minDiv = document.querySelector('#minutes');

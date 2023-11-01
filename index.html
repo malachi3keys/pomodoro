@@ -42,6 +42,29 @@
                 <button class="start-btn" id="reset">reset</button>
             </div>
 
+            <div class="settings">
+                <form id="settings-form">
+                    <div>
+                        <label for="pom-time">Pomodoro</label>
+                        <br>
+                        <input id="pom-time" type="number" min="15" max="60" value="25">
+                    </div>
+                    <div>
+                        <label for="short-time">Short Break</label>
+                        <br>
+                        <input id="short-time" type="number" min="1" max="15" value="5">
+                    </div>
+                    <div>
+                        <label for="long-time">Long Break</label>
+                        <br>
+                        <input id="long-time" type="number" min="1" max="30" value="15">
+                    </div>
+                    <br><br>
+                    <button type="submit">Update</button>
+                </form>
+                
+            </div>
+
             <div id="how">
                 <h2 class="how-title">How to use the Pomodoro Technique:</h2>
                 <div class="instructions">
