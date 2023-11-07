@@ -12,17 +12,6 @@ var pomodoro = pomodoroDefault;
 var shortBreak = shortBreakDefault;
 var longBreak = longBreakDefault;
 
-//Change length of each timer based on input
-//error message if not a number or outside the range
-settings.addEventListener('submit', (event) => {
-    event.preventDefault();
-    pomodoro = settings.elements['pom-time'].value;
-    shortBreak = settings.elements['short-time'].value;
-    longBreak = settings.elements['long-time'].value;
-
-    resetClock();
-})
-
 //Identify divs that will need to be updated
 const minDiv = document.querySelector('#minutes');
 const secDiv = document.querySelector('#seconds');
@@ -141,3 +130,45 @@ function clearClock() {
     clearInterval(timeinterval);
     timeinterval = null;
 }
+
+function defaultTime() {
+    pomodoro = pomodoroDefault;
+    shortBreak = shortBreakDefault;
+    longBreak = longBreakDefault;
+
+    pomSettings.value = pomodoroDefault;
+    shortSettings.value = shortBreakDefault;
+    longSettings.value = longBreakDefault;
+}
+
+//Show settings menu
+const gear = document.querySelector('#gear');
+const settings = document.querySelector('#settings') 
+gear.addEventListener('click', () => {
+    if(settings.classList.contains('hidden')){
+        settings.classList.remove('hidden');
+    } else{
+        settings.classList.add('hidden');
+    }
+})
+
+//Change length of each timer based on input
+const settingsForm = document.querySelector('#settings-form');
+const pomSettings = document.querySelector('#pom-time');
+const shortSettings = document.querySelector('#short-time');
+const longSettings = document.querySelector('#long-time');
+
+settingsForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    pomodoro = pomSettings.value;
+    shortBreak = shortSettings.value;
+    longBreak = longSettings.value;
+
+    resetClock();
+})
+
+const defaultBtn = document.querySelector('#default-btn');
+defaultBtn.addEventListener('click', () => {
+    defaultTime();
+    resetClock();
+})

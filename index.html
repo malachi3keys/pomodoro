@@ -40,38 +40,44 @@
                 <button class="start-btn" id="start">start</button>
                 <button class="start-btn" id="pause">pause</button>
                 <button class="start-btn" id="reset">reset</button>
+                <button class="start-btn" id="gear">
+                    <div class="gear-container">
+                        <img src="images/gear_icon.png" class="gear-fill">    
+                    </div>
+                </button>
             </div>
 
-            <div class="settings">
+            <div id="settings" class="hidden">
                 <form id="settings-form">
-                    <div>
+                    <div class="settings-input">
                         <label for="pom-time">Pomodoro</label>
                         <br>
                         <input id="pom-time" type="number" min="15" max="60" value="25">
                     </div>
-                    <div>
+                    <div class="settings-input">
                         <label for="short-time">Short Break</label>
                         <br>
                         <input id="short-time" type="number" min="1" max="15" value="5">
                     </div>
-                    <div>
+                    <div class="settings-input">
                         <label for="long-time">Long Break</label>
                         <br>
                         <input id="long-time" type="number" min="1" max="30" value="15">
                     </div>
-                    <br><br>
-                    <button type="submit">Update</button>
                 </form>
-                
+                <button type="submit" form="settings-form" class="start-btn">Update</button>
+                <button id="default-btn" class="start-btn">Default times</button>
+            
+                <div id="how">
+                    <h2 class="how-title">How to use the Pomodoro Technique:</h2>
+                    <div class="instructions">
+                        <div class="details">Focus on a task for <b>25</b> minutes (pomodoro), then take a <b>5</b> minute break</div> 
+                        <div class="details">After completing <b>4</b> pomodoros, take a longer break of <b>15</b> minutes</div>
+                    </div>  
+                </div>
             </div>
 
-            <div id="how">
-                <h2 class="how-title">How to use the Pomodoro Technique:</h2>
-                <div class="instructions">
-                    <div class="details">Focus on a task for <b>25</b> minutes (pomodoro), then take a <b>5</b> minute break</div> 
-                    <div class="details">After completing <b>4</b> pomodoros, take a longer break of <b>15</b> minutes</div>
-                </div>  
-            </div>
+            
 
             <audio id="boop" src="sounds/Computer_Magic.mp3" preload="auto"></audio>
         </div>
