@@ -23,7 +23,7 @@
             <div class="select-box">
                 <div class="select-timer">
                     <div class="type" id="p">Pomodoro</div>
-                    <div class="type" id="b">Break</div>
+                    <div class="type" id="b">Short Break</div>
                     <div class="type" id="j">Long Break</div>
                 </div>    
 
@@ -65,14 +65,21 @@
                         <input id="long-time" type="number" min="1" max="30" value="15">
                     </div>
                 </form>
-                <button type="submit" form="settings-form" class="start-btn">Update</button>
-                <button id="default-btn" class="start-btn">Default times</button>
+                <div class="settings-btns">
+                    <button type="submit" form="settings-form" class="start-btn menu-btn">update</button>
+                    <button id="default-btn" class="start-btn menu-btn">default</button>
+                </div>
+                
+                <hr class="settings-hr">
             
                 <div id="how">
                     <h2 class="how-title">How to use the Pomodoro Technique:</h2>
                     <div class="instructions">
-                        <div class="details">Focus on a task for <b>25</b> minutes (pomodoro), then take a <b>5</b> minute break</div> 
-                        <div class="details">After completing <b>4</b> pomodoros, take a longer break of <b>15</b> minutes</div>
+                        <ul>
+                            <li>Focus on a task for <b>25</b> minutes (pomodoro)</li>
+                            <li>Take a short <b>5</b> minute break</li>
+                            <li>After completing <b>4</b> pomodoros, take a longer break of <b>15</b> minutes</li>
+                        </ul>
                     </div>  
                 </div>
             </div>

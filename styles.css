@@ -4,16 +4,15 @@
 }
 
 :root {
-    --accent: #973bee;
+    --accent: #b61233;
     --text-dark: #121212;
     --text-light: #ffffff; 
-    --background: #e5ddf3;
+    --tab-background: #fbafbe;
+    --menu-background: #e5ddf3;
 }
 
 body {   
     color: var(--text-dark);
-    /* background: linear-gradient(to top, #b375ee, #fff 95%); */
-    /* background-color: var(--background); */
     font-family: Arial, sans-serif;
     font-size: 1.25rem;
     height: 100vh;
@@ -46,6 +45,7 @@ h1 {
     margin: 0 1rem;
 }
 
+/* Select timer type */
 .select-box {
     display: flex;
     flex-direction: column;
@@ -59,14 +59,15 @@ h1 {
 }
 
 .type {
-    border-style: none;
+    border: none;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    background-color: var(--tab-background);
     cursor: pointer;
     font-size: 1.75rem;
     font-weight: bold;
-    padding: 6px 20px;
-    margin: 0 5px
+    padding: 10px 20px;
+    margin: 0 3px
 }
 
 .highlight {
@@ -75,14 +76,16 @@ h1 {
 }
 
 #tab {
-    border: 3px solid var(--accent);
+    border: 3.5px solid var(--accent);
     border-radius: 2px;
     margin-top: 0px;
     width: 100%;
     min-width: 300px;
-    max-width: 550px;
+    max-width: 700px;
 }
 
+
+/* Clock */
 #time-div {
     display: flex;
     justify-content: center;
@@ -108,42 +111,12 @@ h1 {
 
 .start-btn {
     background-color: var(--accent);
-    border-radius: 10px;
+    border-radius: 30px;
     border-style: none;
     color: white;
     font-size: 1.75rem;
     margin: 0 15px;
-    padding: 6px 10px;
-}
-
-/* Settings */
-#settings {
-    /* background-color: var(--text-dark); */
-}
-
-.hidden {
-    display: none;
-}
-
-#settings-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-}
-
-.settings-input {
-    margin: 10px 20px;
-    text-align: left;
-}
-
-input {
-    border: solid var(--text-dark) 1px;
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: 100%;
-    margin-top: 10px;
-    padding: 5px;
+    padding: 10px 15px;
 }
 
 .gear-container {
@@ -154,45 +127,110 @@ input {
     height: 1.75rem;
 }
 
-/* Instructions */
-#how {
-    margin-top: 7rem;
+
+/* Settings Menu */
+#settings {
+    background-color: var(--menu-background);
+    /* border: var(--accent) ridge 5px; */
+    box-shadow: var(--accent) 5px 5px 5px;
+    border-radius: 30px;
+    margin-top: 80px;
+    padding: 40px;
+    max-width: 750px;
+    font-size: 1.45rem;
 }
 
+.hidden {
+    display: none;
+}
+
+#settings-form {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.settings-input {
+    margin: 10px 20px;
+    text-align: left;
+}
+
+.settings-input > label {
+    font-weight: 600;
+}
+
+input {
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 100%;
+    margin-top: 10px;
+    max-width: 100px;
+    padding: 5px;
+}
+
+.settings-btns {
+    margin-top: 10px;
+    
+}
+
+.menu-btn {
+    font-size: 1.3rem;    
+}
+
+.settings-hr {
+    border: none;
+    border-top: 3px solid var(--accent);
+    color: var(--accent);
+    margin: 50px auto;
+    overflow: visible;
+    text-align: center;
+}
+
+/* Instructions */
 .how-title {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     margin-bottom: 1.5rem;
 }
 
 .instructions {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin: auto;
     width: 75%;
 }
 
-.details {
-    font-size: 1.5rem;
+ul {
+    padding-left: 20px;
+}
+
+li {
     line-height: 1.75rem;
     margin-bottom: 1.25rem;
     text-align: left;
+    text-decoration: none;
 }
 
 
 /* Media queries */
 @media (max-width: 850px) {
+    #bigheader, h1 {
+        font-size: 3.25rem;
+    }
+
     .bigbox {
         margin-bottom: 4rem;
     } 
 
     .type {
-        padding: 6px 15px;
+        font-size: 1.5rem;
+        padding: 10px 15px;
+    }
+
+    #settings {
+        font-size: 1.35rem;
     }
 
     .how-title {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
         margin-bottom: 1rem;
     }
 
@@ -202,17 +240,21 @@ input {
 }
 
 @media (max-width: 550px) {
+    #bigheader, h1 {
+        font-size: 3rem;
+    }
+
     .bigbox {  
         margin-bottom: 3rem;
     }
     
     .type {
-        font-size: 1.5rem;
-        padding: 6px 10px;
+        font-size: 1.4rem;
+        padding: 10px 10px;
     }
 
     .clock, .colon {
-        font-size: 9.5rem;
+        font-size: 8.5rem;
     }
 
     .start-btn {
@@ -220,8 +262,12 @@ input {
         margin: 0 12px;
     }
 
+    #settings, .menu-btn {
+        font-size: 1.25rem;
+    }
+
     .how-title {
-        font-size: 1.5rem;
+        font-size: 1.45rem;
         margin-bottom: 0.75rem;
     }
 
